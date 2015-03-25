@@ -1,0 +1,9 @@
+C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\bin\Release\Windows KeyLogger.exe.config
+C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\bin\Release\Windows KeyLogger.exe
+C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\bin\Release\Windows KeyLogger.pdb
+C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Release\Windows_KeyLogger.Form1.resources
+C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Release\Windows_KeyLogger.Properties.Resources.resources
+C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Release\Windows KeyLogger.csproj.GenerateResource.Cache
+C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Release\Windows KeyLogger.exe
+C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Release\Windows KeyLogger.pdb
+C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Release\Windows KeyLogger.csprojResolveAssemblyReference.cache
