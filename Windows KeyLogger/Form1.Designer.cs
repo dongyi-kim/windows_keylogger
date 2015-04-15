@@ -30,13 +30,14 @@
         {
             this.Listen = new System.Windows.Forms.Button();
             this.richLog = new System.Windows.Forms.RichTextBox();
+            this.btnNate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Listen
             // 
             this.Listen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Listen.Location = new System.Drawing.Point(22, 678);
-            this.Listen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Listen.Margin = new System.Windows.Forms.Padding(6);
             this.Listen.Name = "Listen";
             this.Listen.Size = new System.Drawing.Size(139, 46);
             this.Listen.TabIndex = 0;
@@ -50,7 +51,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richLog.Location = new System.Drawing.Point(22, 24);
-            this.richLog.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.richLog.Margin = new System.Windows.Forms.Padding(6);
             this.richLog.Name = "richLog";
             this.richLog.ReadOnly = true;
             this.richLog.Size = new System.Drawing.Size(1406, 637);
@@ -58,14 +59,27 @@
             this.richLog.Text = "";
             this.richLog.TextChanged += new System.EventHandler(this.richLog_TextChanged);
             // 
+            // btnNate
+            // 
+            this.btnNate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNate.Location = new System.Drawing.Point(294, 678);
+            this.btnNate.Margin = new System.Windows.Forms.Padding(6);
+            this.btnNate.Name = "btnNate";
+            this.btnNate.Size = new System.Drawing.Size(139, 46);
+            this.btnNate.TabIndex = 2;
+            this.btnNate.Text = "Nate";
+            this.btnNate.UseVisualStyleBackColor = true;
+            this.btnNate.Click += new System.EventHandler(this.btnNate_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1454, 747);
+            this.Controls.Add(this.btnNate);
             this.Controls.Add(this.richLog);
             this.Controls.Add(this.Listen);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Key Logger";
             this.ResumeLayout(false);
@@ -76,6 +90,7 @@
 
         private System.Windows.Forms.Button Listen;
         public System.Windows.Forms.RichTextBox richLog;
+        private System.Windows.Forms.Button btnNate;
     }
 }
 

