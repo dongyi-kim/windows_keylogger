@@ -30,16 +30,15 @@
         {
             this.Listen = new System.Windows.Forms.Button();
             this.richLog = new System.Windows.Forms.RichTextBox();
-            this.btnNate = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Listen
             // 
             this.Listen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Listen.Location = new System.Drawing.Point(22, 678);
-            this.Listen.Margin = new System.Windows.Forms.Padding(6);
+            this.Listen.Location = new System.Drawing.Point(12, 339);
             this.Listen.Name = "Listen";
-            this.Listen.Size = new System.Drawing.Size(139, 46);
+            this.Listen.Size = new System.Drawing.Size(75, 23);
             this.Listen.TabIndex = 0;
             this.Listen.Text = "Hook";
             this.Listen.UseVisualStyleBackColor = true;
@@ -50,36 +49,33 @@
             this.richLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richLog.Location = new System.Drawing.Point(22, 24);
-            this.richLog.Margin = new System.Windows.Forms.Padding(6);
+            this.richLog.Location = new System.Drawing.Point(12, 12);
             this.richLog.Name = "richLog";
             this.richLog.ReadOnly = true;
-            this.richLog.Size = new System.Drawing.Size(1406, 637);
+            this.richLog.Size = new System.Drawing.Size(759, 320);
             this.richLog.TabIndex = 1;
             this.richLog.Text = "";
             this.richLog.TextChanged += new System.EventHandler(this.richLog_TextChanged);
             // 
-            // btnNate
+            // button1
             // 
-            this.btnNate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNate.Location = new System.Drawing.Point(294, 678);
-            this.btnNate.Margin = new System.Windows.Forms.Padding(6);
-            this.btnNate.Name = "btnNate";
-            this.btnNate.Size = new System.Drawing.Size(139, 46);
-            this.btnNate.TabIndex = 2;
-            this.btnNate.Text = "Nate";
-            this.btnNate.UseVisualStyleBackColor = true;
-            this.btnNate.Click += new System.EventHandler(this.btnNate_Click);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Location = new System.Drawing.Point(93, 339);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Talk";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1454, 747);
-            this.Controls.Add(this.btnNate);
+            this.ClientSize = new System.Drawing.Size(783, 374);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.richLog);
             this.Controls.Add(this.Listen);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Key Logger";
             this.ResumeLayout(false);
@@ -90,7 +86,7 @@
 
         private System.Windows.Forms.Button Listen;
         public System.Windows.Forms.RichTextBox richLog;
-        private System.Windows.Forms.Button btnNate;
+        private System.Windows.Forms.Button button1;
     }
 }
 

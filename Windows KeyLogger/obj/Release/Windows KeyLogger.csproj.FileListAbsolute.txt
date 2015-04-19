@@ -7,3 +7,4 @@ C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows
 C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Release\Windows KeyLogger.exe
 C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Release\Windows KeyLogger.pdb
 C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Release\Windows KeyLogger.csprojResolveAssemblyReference.cache
+C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Release\Windows_KeyLogger.FakeTalk.resources

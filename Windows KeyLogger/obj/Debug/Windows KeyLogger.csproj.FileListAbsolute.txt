@@ -7,4 +7,4 @@ c:\users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows
 c:\users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Debug\Windows KeyLogger.exe
 c:\users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Debug\Windows KeyLogger.pdb
 c:\users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Debug\Windows_KeyLogger.Form1.resources
-C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Debug\Windows_KeyLogger.FakeForm.resources
+C:\Users\waps12b\documents\visual studio 2013\Projects\Windows KeyLogger\Windows KeyLogger\obj\Debug\Windows_KeyLogger.FakeTalk.resources

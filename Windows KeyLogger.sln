@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows KeyLogger", "Windows KeyLogger\Windows KeyLogger.csproj", "{AE6E7C03-B577-4B78-ACBF-D9C456360933}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keylogger Defender", "Keylogger Defender\Keylogger Defender.csproj", "{DE40418B-9226-41E8-B65E-7DB5D8D9CD3F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{AE6E7C03-B577-4B78-ACBF-D9C456360933}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE6E7C03-B577-4B78-ACBF-D9C456360933}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE6E7C03-B577-4B78-ACBF-D9C456360933}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DE40418B-9226-41E8-B65E-7DB5D8D9CD3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE40418B-9226-41E8-B65E-7DB5D8D9CD3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE40418B-9226-41E8-B65E-7DB5D8D9CD3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE40418B-9226-41E8-B65E-7DB5D8D9CD3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

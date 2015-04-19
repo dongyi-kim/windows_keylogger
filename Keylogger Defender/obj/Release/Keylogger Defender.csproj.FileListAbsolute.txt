@@ -1,0 +1,8 @@
+C:\Users\waps12b\Documents\Visual Studio 2013\Projects\Windows KeyLogger\Keylogger Defender\bin\Release\Keylogger Defender.exe.config
+C:\Users\waps12b\Documents\Visual Studio 2013\Projects\Windows KeyLogger\Keylogger Defender\bin\Release\Keylogger Defender.exe
+C:\Users\waps12b\Documents\Visual Studio 2013\Projects\Windows KeyLogger\Keylogger Defender\bin\Release\Keylogger Defender.pdb
+C:\Users\waps12b\Documents\Visual Studio 2013\Projects\Windows KeyLogger\Keylogger Defender\obj\Release\Keylogger Defender.csprojResolveAssemblyReference.cache
+C:\Users\waps12b\Documents\Visual Studio 2013\Projects\Windows KeyLogger\Keylogger Defender\obj\Release\Keylogger_Defender.Properties.Resources.resources
+C:\Users\waps12b\Documents\Visual Studio 2013\Projects\Windows KeyLogger\Keylogger Defender\obj\Release\Keylogger Defender.csproj.GenerateResource.Cache
+C:\Users\waps12b\Documents\Visual Studio 2013\Projects\Windows KeyLogger\Keylogger Defender\obj\Release\Keylogger Defender.exe
+C:\Users\waps12b\Documents\Visual Studio 2013\Projects\Windows KeyLogger\Keylogger Defender\obj\Release\Keylogger Defender.pdb

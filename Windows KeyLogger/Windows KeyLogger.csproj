@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FakeForm.cs">
+    <Compile Include="FakeTalk.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FakeForm.Designer.cs">
-      <DependentUpon>FakeForm.cs</DependentUpon>
+    <Compile Include="FakeTalk.Designer.cs">
+      <DependentUpon>FakeTalk.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -59,8 +59,8 @@
     <Compile Include="KeyboardHook.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FakeForm.resx">
-      <DependentUpon>FakeForm.cs</DependentUpon>
+    <EmbeddedResource Include="FakeTalk.resx">
+      <DependentUpon>FakeTalk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

